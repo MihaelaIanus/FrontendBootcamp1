@@ -203,10 +203,16 @@ body {
 }
 
 @media only screen and (max-width: 667px){
-	.container {
-		display: flex!important;
-		flex-flow: row; 
-		flex-wrap: wrap;
+	body .container {
+		grid-template-columns: 1fr;
+   		grid-template-areas:
+        'header'
+        'title'
+        'section1_image'
+        'section1_text'
+        'section2_image'
+        'section2_text'
+        'footer';
 		font-size: 2rem;
 	}
 	body .container .heading {
@@ -225,12 +231,14 @@ body {
 	body .container > .section1-image,
 	body .container > .section2-image {
 
-		height: auto;
-
 		> img {
 			max-width: 95%;
+			max-height: max-content;
 
 		}
+	}
+	body .container > .section1-background {
+		grid-row: 5;
 	}
 	
 	body .container > .section2-text {
